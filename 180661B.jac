@@ -6,7 +6,7 @@ walker count_number_of_adults {
     family_root: take-->node::person;
     person {
             here::get_age_group;
-            if (age_group=="adult"){
+            if (here.age_group=="adult"){
             counter=counter+1;
             }
         }

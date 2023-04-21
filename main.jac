@@ -1,7 +1,9 @@
 import {*} with "./graph.jac";
 import {*} with "./180661B.jac";
-import {*} with "./180235A.jac";
 import {*} with "./180338R.jac";
+import {*} with "./180235A.jac";
+import {*} with "./180349C.jac";
+import {*} with "./180264K.jac";
 
 walker create_familytree {
     // creates a familytree from a json file
@@ -61,6 +63,10 @@ walker create_familytree {
 
 
 
+
+
+
+
 walker find_coming_birthday {
     // returns the upcoming birthdays of the family
     has max_return = 5;
@@ -72,8 +78,7 @@ walker find_coming_birthday {
         if (!here.deceased) {
             here::get_days_to_birthday;
             here::get_age;
-            here::get_age_group;
-            birthday_order.l::append([here.days_to_birthday, here.age, here.name,here.age_group]);
+            birthday_order.l::append([here.days_to_birthday, here.age, here.name]);
         }
     }
     with exit {
@@ -82,4 +87,9 @@ walker find_coming_birthday {
         std.out(birthday_order);
         report birthday_order;
     }
+
 }
+
+
+
+
